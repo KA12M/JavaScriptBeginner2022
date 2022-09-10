@@ -1,29 +1,30 @@
+let product = {
+  name: "Coffee1",
+  price: 199,
+  stock: 10,
+  category: {
+    id: 2,
+    name: "black coffee",
+  },
+};
+
+product.description = "Coffee feel good!";
+
+product.price = 89;
+
+console.log(product.name);
+console.log(product.price);
+console.log(product.description);
+console.log(product);
+
+// output to html page
 let output = "";
 
-class Student {
-  constructor(firstName, lastName, birthday, age){
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.birthday = birthday;
-    this.age = age;
-  }
+output += `<h1 class="text">${product['name']}</h1>`;
+output += `<h1 class="text">${product.price}</h1>`;
+output += `<h1 class="text">${product.stock}</h1>`;
+output += `<h1 class="text">${product.category.name}</h1>`;
 
-  addYearAge(){
-    this.age += " ปี";
-  }
-
-  showData() {
-    output += `<h1>${this.firstName}</h1>`;
-    output += `<h1>${this.lastName}</h1>`;
-    output += `<h1>${this.age}</h1>`;
-  }
-}
-
-let stu01 = new Student("Cat", "meow", 2545-01-01, 10);
-let stu02 = new Student("Chicken", "jib", 2549-01-01, 2);
-stu01.addYearAge();
-stu01.showData();
-
-document.getElementById("myPage").innerHTML = output;
+document.getElementById("myPage").innerHTML = output; 
 
 includeHTML();
